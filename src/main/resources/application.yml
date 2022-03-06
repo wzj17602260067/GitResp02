@@ -1,0 +1,25 @@
+server:
+  port: 8080
+http:
+  port: 8081
+
+
+user:
+  hha: hha
+  age: 12
+  price: 1.2
+
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/zy_yun?serverTimezone=Asia/Shanghai&CharacterEncoding=utf8
+    username: root
+    password: root
+
+# mybatis 的配置
+mybatis-plus:
+  mapper-locations: classpath:/mapper/*.xml
+  type-aliases-package: com.yidong.yun.pojo
+  configuration:
+    map-underscore-to-camel-case: true

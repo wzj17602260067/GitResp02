@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+
+<mapper namespace="com.yidong.yun.dao.BasesourceMapper">
+
+
+        <resultMap id="BasesourceMap" type="com.yidong.yun.pojo.Basesource">
+
+            <id column="id" property="id" jdbcType="CHAR"/>
+            <result column="name" property="name" jdbcType="VARCHAR"/>
+            <result column="description" property="description" jdbcType="VARCHAR" />
+            <result column="created_At" property="createAt" jdbcType="TIMESTAMP"/>
+            <result column="updated_At" property="updateAt" jdbcType="TIMESTAMP"/>
+            <result column="district_id" property="districtId" jdbcType="CHAR" />
+            <result column="pool_id" property="poolId" jdbcType="CHAR" />
+            <result column="organization_id" property="organizationId" jdbcType="CHAR"/>
+            <result column="business_id" property="businessId" jdbcType="CHAR"/>
+            <result column="sub_order_id" property="subOrderId" jdbcType="CHAR" />
+            <result column="user_id" property="userId" jdbcType="CHAR" />
+            <result column="product_id" property="productId" jdbcType="CHAR" />
+            <result column="resource_type" property="resourceType" jdbcType="VARCHAR"/>
+            <result column="region_name" property="regionName" jdbcType="VARCHAR"/>
+            <result column="domain_name" property="domainName" jdbcType="VARCHAR" />
+            <result column="deleted" property="deleted" jdbcType="BIT"/>
+            <result column="expired_at" property="expiredAt" jdbcType="TIMESTAMP" />
+            <result column="is_in_recycle_bin" property="isInRecycleBin" jdbcType="BIT"/>
+        </resultMap>
+
+        <sql id="baer-column-list">
+              br.id id,br.name `name`,br.description,description,br.pool_id id
+        </sql>
+
+    <insert id="insertSource">
+
+    </insert>
+
+    <select id="selectAll"  resultMap="BasesourceMap">
+           select <include refid="baer-column-list" /> from base_resources br where deleted = 0 and name = #{name};
+       </select>
+
+
+
+
+
+</mapper>
